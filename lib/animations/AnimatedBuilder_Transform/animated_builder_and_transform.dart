@@ -19,7 +19,7 @@ class _AnimatedBuilderAndTransformState
   void initState() {
     // Initialize the AnimationController with a duration of 5 seconds
     controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 5));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     // Create an animation that goes from 0.0 to 2 * pi (a full rotation)
     animation = Tween(begin: 0.0, end: 2 * pi).animate(controller);

@@ -2,6 +2,8 @@ import 'package:animation/resources/assets_manager.dart';
 import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
+import '../app/components.dart';
+
 class StartView extends StatefulWidget {
   const StartView({super.key});
 
@@ -12,10 +14,11 @@ class StartView extends StatefulWidget {
 class _StartViewState extends State<StartView> {
   @override
   Widget build(BuildContext context) {
-    List<String> bannerImage = [AssetsManager.vandadImage];
-    List<String> routesNames = [Routes.vandadAnimation];
+    List<String> bannerImage = [AssetsManager.vandadImage, AssetsManager.designPatterns];
+    List<String> routesNames = [Routes.vandadAnimationRoute, Routes.designPatternsRoute];
     List<String> widgetTitle = [
       'Vandad Animations',
+      'Design Patterns',
     ];
     return Scaffold(
       appBar: AppBar(
@@ -35,54 +38,6 @@ class _StartViewState extends State<StartView> {
                 height: 16,
               ),
           itemCount: bannerImage.length),
-    );
-  }
-}
-
-class CoursesWidget extends StatelessWidget {
-  final String routesName;
-  final String bannerImage;
-  final String title;
-
-  const CoursesWidget({
-    super.key,
-    required this.bannerImage, required this.title, required this.routesName,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(15),
-      onTap: (){
-        Navigator.pushNamed(context, routesName);
-      },
-      child: Card(
-        child: Container(
-          height: 180,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.network(
-                    bannerImage,
-                    height: 120,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                  )),
-              const SizedBox(
-                height: 16,
-              ),
-              Text(
-                title,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-              )
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

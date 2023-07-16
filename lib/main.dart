@@ -13,7 +13,7 @@ class AdvancedTopicsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.startView,
+      initialRoute: Routes.startRoute,
       onGenerateRoute: RouteGenerator.getRoute,
       theme: ThemeData(useMaterial3: true),
     );

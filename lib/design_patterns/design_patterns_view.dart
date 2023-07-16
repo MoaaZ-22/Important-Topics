@@ -1,10 +1,10 @@
 import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
-import '../../app/components.dart';
+import '../app/components.dart';
 
-class VandadAnimations extends StatelessWidget {
-  const VandadAnimations({super.key});
+class DesignPatternsView extends StatelessWidget {
+  const DesignPatternsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class VandadAnimations extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Types Of Animations',
+          'Design Patterns',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
         ),
       ),
@@ -21,8 +21,8 @@ class VandadAnimations extends StatelessWidget {
         children: const [
           SizedBox(height: 20,),
           CustomButton(
-            buttonText: 'Animated Builder And Transform',
-            routesName: Routes.animatedBuilderAndTransformRoute,
+            buttonText: 'Adapter',
+            routesName: Routes.adapterRoute,
           )
         ],
       ),
