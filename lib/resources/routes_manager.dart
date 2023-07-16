@@ -1,7 +1,7 @@
-import 'package:animation/animations/modules/vandad_animations.dart';
+import 'package:animation/animations/AnimatedBuilder_Transform/vandad_animations.dart';
 import 'package:flutter/material.dart';
 
-import '../animations/modules/AnimatedBuilder_Transform/animated_builder_and_transform.dart';
+import '../animations/AnimatedBuilder_Transform/animated_builder_and_transform.dart';
 import '../start/start_view.dart';
 
 class Routes {
