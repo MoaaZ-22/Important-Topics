@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class CoursesWidget extends StatelessWidget {
@@ -51,12 +52,14 @@ class CoursesWidget extends StatelessWidget {
   }
 }
 
-
 class CustomButton extends StatelessWidget {
   final String routesName;
   final String buttonText;
+
   const CustomButton({
-    super.key, required this.routesName, required this.buttonText,
+    super.key,
+    required this.routesName,
+    required this.buttonText,
   });
 
   @override
@@ -66,8 +69,52 @@ class CustomButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 18),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           backgroundColor: Colors.lightBlue),
-      onPressed: (){
+      onPressed: () {
         Navigator.pushNamed(context, routesName);
-      },child:  Text(buttonText, style: const TextStyle(color: Colors.white),),);
+      },
+      child: Text(
+        buttonText,
+        style: const TextStyle(color: Colors.white),
+      ),
+    );
+  }
+}
+
+class ConnectivitySnackbarContentWidget extends StatelessWidget {
+  final String displayedMessage;
+  final IconData displayedIcon;
+
+  const ConnectivitySnackbarContentWidget({
+    super.key,
+    required this.displayedMessage,
+    required this.displayedIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Icon(
+          displayedIcon,
+          size: 24,
+          color: Colors.white,
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Flexible(
+          child: AutoSizeText(
+            displayedMessage,
+            style: const TextStyle(fontSize: 16, color: Colors.white),
+            minFontSize: 10,
+            stepGranularity: 10,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
+    );
   }
 }

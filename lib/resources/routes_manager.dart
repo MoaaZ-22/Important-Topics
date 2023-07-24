@@ -1,8 +1,9 @@
-import 'package:animation/animations/AnimatedBuilder_Transform/vandad_animations.dart';
 import 'package:animation/design_patterns/Adapter/adapter_view.dart';
 import 'package:flutter/material.dart';
 
-import '../animations/AnimatedBuilder_Transform/animated_builder_and_transform.dart';
+import '../animations/ Curves_And_Clippers/curves_and_clippers.dart';
+import '../animations/Animated_Builder_Transform/animated_builder_and_transform.dart';
+import '../animations/vandad_animations.dart';
 import '../design_patterns/design_patterns_view.dart';
 import '../start/start_view.dart';
 
@@ -13,6 +14,7 @@ class Routes {
       '/animatedBuilderAndTransformView';
   static const String designPatternsRoute = '/designPatternsView';
   static const String adapterRoute = '/adapterView';
+  static const String curvesAndClippersRoute = '/curvesAndClippersView';
 }
 
 class RouteGenerator {
@@ -32,6 +34,9 @@ class RouteGenerator {
       case Routes.adapterRoute:
         return MaterialPageRoute(
             builder: (context) => const AdapterView());
+      case Routes.curvesAndClippersRoute:
+        return MaterialPageRoute(
+            builder: (context) => const CurvesAndClippers());
 
       default:
         return unDefinedRoute();
