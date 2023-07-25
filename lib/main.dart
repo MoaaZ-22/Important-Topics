@@ -1,13 +1,16 @@
-import 'package:animation/connectivity/cubits/connectivity_cubit.dart';
 import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app/functions.dart';
 import 'helpers/bloc_observer.dart';
+import 'helpers/service_locator.dart';
+import 'modules/connectivity/cubits/connectivity_cubit.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
+  WidgetsFlutterBinding.ensureInitialized();
+  ServicesLocator().init();
   runApp(const AdvancedTopicsApp());
 }
 

@@ -1,11 +1,11 @@
 abstract class IPostAPI {
-  List<Post> getPosts();
+  List<AdapterPostModel> getPosts();
 }
 
-class Post {
+class AdapterPostModel {
   final String title;
   final String bio;
-  Post({
+  AdapterPostModel({
     required this.title,
     required this.bio,
   });

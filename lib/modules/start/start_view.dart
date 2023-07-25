@@ -2,7 +2,7 @@ import 'package:animation/resources/assets_manager.dart';
 import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
-import '../app/components.dart';
+import '../../app/components.dart';
 
 class StartView extends StatefulWidget {
   const StartView({super.key});
@@ -14,11 +14,20 @@ class StartView extends StatefulWidget {
 class _StartViewState extends State<StartView> {
   @override
   Widget build(BuildContext context) {
-    List<String> bannerImage = [AssetsManager.vandadImage, AssetsManager.designPatterns];
-    List<String> routesNames = [Routes.vandadAnimationRoute, Routes.designPatternsRoute];
+    List<String> bannerImage = [
+      AssetsManager.vandadImage,
+      AssetsManager.designPatterns,
+      AssetsManager.pagination
+    ];
+    List<String> routesNames = [
+      Routes.vandadAnimationRoute,
+      Routes.designPatternsRoute,
+      Routes.paginationRoute
+    ];
     List<String> widgetTitle = [
       'Vandad Animations',
       'Design Patterns',
+      'Pagination',
     ];
     return Scaffold(
       appBar: AppBar(
@@ -29,11 +38,12 @@ class _StartViewState extends State<StartView> {
         ),
       ),
       body: ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-          itemBuilder: (context, index) =>
-              CoursesWidget(
-                  title: widgetTitle[index],
-                  bannerImage: bannerImage[index], routesName: routesNames[index],),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          itemBuilder: (context, index) => CoursesWidget(
+                title: widgetTitle[index],
+                bannerImage: bannerImage[index],
+                routesName: routesNames[index],
+              ),
           separatorBuilder: (context, index) => const SizedBox(
                 height: 16,
               ),

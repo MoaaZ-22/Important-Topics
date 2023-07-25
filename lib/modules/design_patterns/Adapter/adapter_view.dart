@@ -1,5 +1,6 @@
-import 'package:animation/design_patterns/Adapter/adapter.dart';
 import 'package:flutter/material.dart';
+
+import 'adapter.dart';
 
 class AdapterView extends StatelessWidget {
   const AdapterView({super.key});
@@ -16,11 +17,11 @@ class AdapterView extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        itemCount: postApi.getPosts().length,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          itemCount: postApi.getPosts().length,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           itemBuilder: (context, index) => ListTile(
                 title: Text(postApi.getPosts()[index].title),
-            subtitle: Text(postApi.getPosts()[index].bio),
+                subtitle: Text(postApi.getPosts()[index].bio),
               )),
     );
   }

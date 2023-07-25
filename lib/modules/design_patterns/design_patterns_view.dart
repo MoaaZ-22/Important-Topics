@@ -1,7 +1,7 @@
 import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
-import '../app/components.dart';
+import '../../app/components.dart';
 
 class DesignPatternsView extends StatelessWidget {
   const DesignPatternsView({super.key});
@@ -19,7 +19,9 @@ class DesignPatternsView extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: const [
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           CustomButton(
             buttonText: 'Adapter',
             routesName: Routes.adapterRoute,

@@ -1,11 +1,12 @@
-import 'package:animation/design_patterns/Adapter/adapter_view.dart';
+import 'package:animation/modules/pagination/views/pagination_view.dart';
 import 'package:flutter/material.dart';
 
-import '../animations/ Curves_And_Clippers/curves_and_clippers.dart';
-import '../animations/Animated_Builder_Transform/animated_builder_and_transform.dart';
-import '../animations/vandad_animations.dart';
-import '../design_patterns/design_patterns_view.dart';
-import '../start/start_view.dart';
+import '../modules/animations/ Curves_And_Clippers/curves_and_clippers.dart';
+import '../modules/animations/Animated_Builder_Transform/animated_builder_and_transform.dart';
+import '../modules/animations/vandad_animations.dart';
+import '../modules/design_patterns/Adapter/adapter_view.dart';
+import '../modules/design_patterns/design_patterns_view.dart';
+import '../modules/start/start_view.dart';
 
 class Routes {
   static const String startRoute = '/';
@@ -15,6 +16,7 @@ class Routes {
   static const String designPatternsRoute = '/designPatternsView';
   static const String adapterRoute = '/adapterView';
   static const String curvesAndClippersRoute = '/curvesAndClippersView';
+  static const String paginationRoute = '/paginationView';
 }
 
 class RouteGenerator {
@@ -32,11 +34,13 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (context) => const DesignPatternsView());
       case Routes.adapterRoute:
-        return MaterialPageRoute(
-            builder: (context) => const AdapterView());
+        return MaterialPageRoute(builder: (context) => const AdapterView());
       case Routes.curvesAndClippersRoute:
         return MaterialPageRoute(
             builder: (context) => const CurvesAndClippers());
+      case Routes.paginationRoute:
+        return MaterialPageRoute(
+            builder: (context) => const PaginationView());
 
       default:
         return unDefinedRoute();

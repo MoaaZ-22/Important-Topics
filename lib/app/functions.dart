@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../connectivity/cubits/connectivity_cubit.dart';
+import '../modules/connectivity/cubits/connectivity_cubit.dart';
 import '../resources/strings_manager.dart';
 import 'components.dart';
 
