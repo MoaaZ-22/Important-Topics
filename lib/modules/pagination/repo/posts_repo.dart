@@ -12,7 +12,7 @@ class PostsRepo extends BaseRepository {
 
   Future<Either<Failure, List<Post>>> getPosts({
     int startIndex = 0,
-    int limit = 20,
+    int limit = 7,
   }) async {
     if (await networkInfo.isConnected) {
       // It's connected to the internet, it's safe to call the API.
