@@ -17,17 +17,20 @@ class _StartViewState extends State<StartView> {
     List<String> bannerImage = [
       AssetsManager.vandadImage,
       AssetsManager.designPatterns,
-      AssetsManager.pagination
+      AssetsManager.pagination,
+      AssetsManager.responsiveUI,
     ];
     List<String> routesNames = [
       Routes.vandadAnimationRoute,
       Routes.designPatternsRoute,
-      Routes.paginationRoute
+      Routes.paginationRoute,
+      Routes.responsiveUIRoute,
     ];
     List<String> widgetTitle = [
       'Vandad Animations',
       'Design Patterns',
       'Pagination',
+      'Responsive UI',
     ];
     return Scaffold(
       appBar: AppBar(

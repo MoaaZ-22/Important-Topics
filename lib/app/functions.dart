@@ -25,3 +25,35 @@ void checkConnectionStateFunction(ConnectivityState state,
         )));
   }
 }
+
+/// scale factor
+/// responsive font size
+/// (min, max) font size
+double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
+  /// get scale factor from [getScaleFactor()] function
+  double scaleFactor = getScaleFactor(context);
+
+  /// get responsive font size by multiply [fontSize] with [scaleFactor]
+  double responsiveFontSize = fontSize * scaleFactor;
+
+  /// set [lowerLimit] value to make it less than [responsiveFontSize] by 20%
+  double lowerLimit = fontSize * 0.8;
+
+  /// set [upperLimit] value to make it greater than [responsiveFontSize] by 20%
+  double upperLimit = fontSize * 1.2;
+
+  /// use clamp to make [responsiveFontSize] between [lowerLimit] and [upperLimit]
+  return responsiveFontSize.clamp(lowerLimit, upperLimit);
+}
+
+/// get scale factor
+double getScaleFactor(BuildContext context) {
+  double width = MediaQuery.of(context).size.width;
+  if (width < 600) {
+    return (width / 400);
+  } else if (width < 900) {
+    return (width / 700);
+  } else {
+    return (width / 1000);
+  }
+}

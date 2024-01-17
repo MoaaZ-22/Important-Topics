@@ -1,4 +1,5 @@
 import 'package:animation/modules/pagination/views/pagination_view.dart';
+import 'package:animation/modules/responsive_ui/views/responsive_uI_view.dart';
 import 'package:flutter/material.dart';
 
 import '../modules/animations/ Curves_And_Clippers/curves_and_clippers.dart';
@@ -17,6 +18,7 @@ class Routes {
   static const String adapterRoute = '/adapterView';
   static const String curvesAndClippersRoute = '/curvesAndClippersView';
   static const String paginationRoute = '/paginationView';
+  static const String responsiveUIRoute = '/responsiveUI';
 }
 
 class RouteGenerator {
@@ -39,8 +41,10 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (context) => const CurvesAndClippers());
       case Routes.paginationRoute:
+        return MaterialPageRoute(builder: (context) => const PaginationView());
+      case Routes.responsiveUIRoute:
         return MaterialPageRoute(
-            builder: (context) => const PaginationView());
+            builder: (context) => const ResponsiveUIView());
 
       default:
         return unDefinedRoute();
