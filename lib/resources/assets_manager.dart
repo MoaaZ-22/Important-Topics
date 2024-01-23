@@ -7,4 +7,7 @@ class AssetsManager {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQFF726pEca2iaVMzoB9eSMc__ucVF-AYhEueLFZF6OVS1a-HK2fV8ztPuYC-Er8-U5E&usqp=CAU';
   static const responsiveUI =
       'https://blog.codemagic.io/flutter_layout_1_17235887704647596027_hu7aa779e1d14394cde0aa0ad1b0caadf6_0_1280x1800_fit_linear_3.png';
+
+  static const blocExamples =
+      'https://miro.medium.com/v2/resize:fit:796/1*MJUZGSGBvvF_ivah0cra9g.png';
 }

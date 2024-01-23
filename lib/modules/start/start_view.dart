@@ -1,3 +1,4 @@
+import 'package:animation/generated/l10n.dart';
 import 'package:animation/resources/assets_manager.dart';
 import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +20,21 @@ class _StartViewState extends State<StartView> {
       AssetsManager.designPatterns,
       AssetsManager.pagination,
       AssetsManager.responsiveUI,
+      AssetsManager.blocExamples
     ];
     List<String> routesNames = [
       Routes.vandadAnimationRoute,
       Routes.designPatternsRoute,
       Routes.paginationRoute,
       Routes.responsiveUIRoute,
+      Routes.blocExamples
     ];
-    List<String> widgetTitle = [
-      'Vandad Animations',
-      'Design Patterns',
-      'Pagination',
-      'Responsive UI',
+    List<String> widgetTitle(context) => [
+      S.of(context).vandadAnimations,
+      S.of(context).designPatterns,
+      S.of(context).pagination,
+      S.of(context).responsiveUi,
+      S.of(context).blocExamples
     ];
     return Scaffold(
       appBar: AppBar(
@@ -43,7 +47,7 @@ class _StartViewState extends State<StartView> {
       body: ListView.separated(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           itemBuilder: (context, index) => CoursesWidget(
-                title: widgetTitle[index],
+                title: widgetTitle(context)[index],
                 bannerImage: bannerImage[index],
                 routesName: routesNames[index],
               ),

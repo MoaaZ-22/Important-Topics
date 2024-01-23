@@ -1,0 +1,13 @@
+{
+  "appName": "My App",
+  "vandadAnimations": "Vandad Animations",
+  "designPatterns": "Design Patterns",
+  "pagination": "Pagination",
+  "responsiveUi": "Responsive UI",
+  "blocExamples": "Bloc Examples",
+  "loginBlocView": "Login Bloc View",
+  "logOut": "Log Out",
+  "youAreLoggedIn": "You Are Logged In",
+  "login": "Login",
+  "loginToEnter": "Login To Enter"
+}

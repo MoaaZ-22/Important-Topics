@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' show pi;
+
+import 'package:flutter/material.dart';
 
 class CurvesAndClippers extends StatefulWidget {
   const CurvesAndClippers({super.key});
