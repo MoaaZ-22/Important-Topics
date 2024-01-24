@@ -12,13 +12,14 @@ class BlocView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bloc View'),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
         itemBuilder: (context, index) => CustomButton(
           buttonText: chooseRouteAndTitleFun(index: index, context: context).$1,
           routesName: chooseRouteAndTitleFun(index: index, context: context).$2,
         ),
-        itemCount: 1,
+        itemCount: 2,
       ),
     );
   }
@@ -29,6 +30,9 @@ class BlocView extends StatelessWidget {
   switch (index) {
     case 0:
       return (S.of(context).loginBlocView, Routes.authBLocView);
+
+    case 1:
+      return (S.of(context).genericDialog, Routes.genericDialog);
     default:
       return ('', '');
   }

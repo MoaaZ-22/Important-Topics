@@ -9,5 +9,9 @@
   "logOut": "Log Out",
   "youAreLoggedIn": "You Are Logged In",
   "login": "Login",
-  "loginToEnter": "Login To Enter"
+  "loginToEnter": "Login To Enter",
+  "genericDialog": "Generic dialog",
+  "genericDialogView": "Generic Dialog View",
+  "unblockDialog": "Unblock Dialog",
+  "interestDialog": "Interest Dialog"
 }

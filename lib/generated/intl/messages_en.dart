@@ -26,6 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "blocExamples": MessageLookupByLibrary.simpleMessage("Bloc Examples"),
         "designPatterns":
             MessageLookupByLibrary.simpleMessage("Design Patterns"),
+        "genericDialog": MessageLookupByLibrary.simpleMessage("Generic dialog"),
+        "genericDialogView":
+            MessageLookupByLibrary.simpleMessage("Generic Dialog View"),
+        "interestDialog":
+            MessageLookupByLibrary.simpleMessage("Interest Dialog"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginBlocView":
@@ -33,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginToEnter": MessageLookupByLibrary.simpleMessage("Login To Enter"),
         "pagination": MessageLookupByLibrary.simpleMessage("Pagination"),
         "responsiveUi": MessageLookupByLibrary.simpleMessage("Responsive UI"),
+        "unblockDialog": MessageLookupByLibrary.simpleMessage("Unblock Dialog"),
         "vandadAnimations":
             MessageLookupByLibrary.simpleMessage("Vandad Animations"),
         "youAreLoggedIn":

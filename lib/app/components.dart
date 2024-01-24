@@ -80,6 +80,32 @@ class CustomButton extends StatelessWidget {
   }
 }
 
+class CustomButtonWithFunc extends StatelessWidget {
+  final void Function()? buttonFunc;
+  final String buttonText;
+
+  const CustomButtonWithFunc({
+    super.key,
+    required this.buttonFunc,
+    required this.buttonText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      style: TextButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          backgroundColor: Colors.lightBlue),
+      onPressed: buttonFunc,
+      child: Text(
+        buttonText,
+        style: const TextStyle(color: Colors.white),
+      ),
+    );
+  }
+}
+
 class ConnectivitySnackbarContentWidget extends StatelessWidget {
   final String displayedMessage;
   final IconData displayedIcon;

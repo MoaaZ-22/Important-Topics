@@ -1,5 +1,6 @@
 import 'package:animation/modules/bloc_package/views/bloc_view.dart';
-import 'package:animation/modules/bloc_package/views/login_bloc_view.dart';
+import 'package:animation/modules/bloc_package/widgets/generic_dialog_view.dart';
+import 'package:animation/modules/bloc_package/widgets/login_bloc_view.dart';
 import 'package:animation/modules/pagination/views/pagination_view.dart';
 import 'package:animation/modules/responsive_ui/views/responsive_uI_view.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class Routes {
   static const String responsiveUIRoute = '/responsiveUI';
   static const String blocExamples = '/blocExamples';
   static const String authBLocView = '/authBLocView';
+  static const String genericDialog = '/genericDialog';
 }
 
 class RouteGenerator {
@@ -53,6 +55,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const BlocView());
       case Routes.authBLocView:
         return MaterialPageRoute(builder: (context) => const AuthBlocView());
+      case Routes.genericDialog:
+        return MaterialPageRoute(
+            builder: (context) => const GenericDialogView());
 
       default:
         return unDefinedRoute();

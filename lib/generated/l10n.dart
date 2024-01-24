@@ -159,6 +159,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Generic dialog`
+  String get genericDialog {
+    return Intl.message(
+      'Generic dialog',
+      name: 'genericDialog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Generic Dialog View`
+  String get genericDialogView {
+    return Intl.message(
+      'Generic Dialog View',
+      name: 'genericDialogView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unblock Dialog`
+  String get unblockDialog {
+    return Intl.message(
+      'Unblock Dialog',
+      name: 'unblockDialog',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interest Dialog`
+  String get interestDialog {
+    return Intl.message(
+      'Interest Dialog',
+      name: 'interestDialog',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

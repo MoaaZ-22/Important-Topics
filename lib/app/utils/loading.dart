@@ -58,7 +58,7 @@ class LoadingScreen {
                       width: 120,
                       height: 120,
                     ),
-                    const SizedBox(height: 5),
+                    if (text != null) const SizedBox(height: 5),
                     if (text != null)
                       StreamBuilder(
                         stream: text0.stream,
