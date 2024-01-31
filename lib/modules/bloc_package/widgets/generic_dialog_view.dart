@@ -33,7 +33,9 @@ class GenericDialogView extends StatelessWidget {
       return (
         S.of(context).unblockDialog,
         () async {
-          final result = await showUnblockAccountDialog(context);
+          // showInterestAccountDialog(context); single button dialog
+          final result = await showUnblockAccountDialog(
+              context); // two buttons dialog as column or row
           print(result);
         }
       );

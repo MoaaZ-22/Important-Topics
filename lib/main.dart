@@ -5,6 +5,7 @@ import 'package:animation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:sizer/sizer.dart';
 
 import 'app/functions.dart';
 import 'helpers/bloc_observer.dart';
@@ -36,19 +37,21 @@ class AdvancedTopicsApp extends StatelessWidget {
           listener: (context, state) {
             checkConnectionStateFunction(state, mainRootScaffoldMessengerKey);
           },
-          child: MaterialApp(
-            scaffoldMessengerKey: mainRootScaffoldMessengerKey,
-            debugShowCheckedModeBanner: false,
-            initialRoute: Routes.startRoute,
-            onGenerateRoute: RouteGenerator.getRoute,
-            theme: ThemeData.dark(useMaterial3: true),
-            supportedLocales: S.delegate.supportedLocales,
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
+          child: Sizer(
+            builder: (buildContext, orientation, deviceType) => MaterialApp(
+              scaffoldMessengerKey: mainRootScaffoldMessengerKey,
+              debugShowCheckedModeBanner: false,
+              initialRoute: Routes.startRoute,
+              onGenerateRoute: RouteGenerator.getRoute,
+              theme: ThemeData.dark(useMaterial3: true),
+              supportedLocales: S.delegate.supportedLocales,
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+            ),
           ),
         ));
   }

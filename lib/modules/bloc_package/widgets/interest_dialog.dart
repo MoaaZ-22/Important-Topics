@@ -1,20 +1,18 @@
 import 'package:animation/app/utils/generic_dialog.dart';
 import 'package:flutter/material.dart' show BuildContext, Colors;
 
-Future<bool> showUnblockAccountDialog(BuildContext context) {
+Future<bool> showInterestAccountDialog(BuildContext context) {
   return showGenericDialog<bool>(
     buttonColors: {
-      'Unblock': Colors.red,
-      'cancel': Colors.white,
+      'Show Interest': Colors.red,
     },
     dialogBackgroundColor: Colors.black,
     buttonLayout: DialogButtonLayout.column,
     context: context,
-    title: 'Unblock account',
-    content: 'Are you sure you want to unblock your account?',
+    title: 'Show Interest',
+    content: 'Are you sure you want to Show Interest to  this account?',
     optionsBuilder: () => {
-      'Unblock': true,
-      'Cancel': false,
+      'Show Interest': true,
     },
   ).then(
     (value) => value ?? false,
