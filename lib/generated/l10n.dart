@@ -199,6 +199,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Search with Bloc`
+  String get searchWithBloc {
+    return Intl.message(
+      'Search with Bloc',
+      name: 'searchWithBloc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

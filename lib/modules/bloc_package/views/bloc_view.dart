@@ -19,7 +19,7 @@ class BlocView extends StatelessWidget {
           buttonText: chooseRouteAndTitleFun(index: index, context: context).$1,
           routesName: chooseRouteAndTitleFun(index: index, context: context).$2,
         ),
-        itemCount: 2,
+        itemCount: 3,
       ),
     );
   }
@@ -33,6 +33,9 @@ class BlocView extends StatelessWidget {
 
     case 1:
       return (S.of(context).genericDialog, Routes.genericDialog);
+
+    case 2:
+      return (S.of(context).searchWithBloc, Routes.searchWithBlocConcurrency);
     default:
       return ('', '');
   }

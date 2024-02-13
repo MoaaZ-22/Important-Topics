@@ -38,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginToEnter": MessageLookupByLibrary.simpleMessage("Login To Enter"),
         "pagination": MessageLookupByLibrary.simpleMessage("Pagination"),
         "responsiveUi": MessageLookupByLibrary.simpleMessage("Responsive UI"),
+        "searchWithBloc":
+            MessageLookupByLibrary.simpleMessage("Search with Bloc"),
         "unblockDialog": MessageLookupByLibrary.simpleMessage("Unblock Dialog"),
         "vandadAnimations":
             MessageLookupByLibrary.simpleMessage("Vandad Animations"),

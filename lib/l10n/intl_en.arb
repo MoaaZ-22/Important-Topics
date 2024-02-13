@@ -13,5 +13,6 @@
   "genericDialog": "Generic dialog",
   "genericDialogView": "Generic Dialog View",
   "unblockDialog": "Unblock Dialog",
-  "interestDialog": "Interest Dialog"
+  "interestDialog": "Interest Dialog",
+  "searchWithBloc": "Search with Bloc"
 }

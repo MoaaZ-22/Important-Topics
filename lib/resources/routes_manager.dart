@@ -1,6 +1,7 @@
 import 'package:animation/modules/animations/Frzbi_Admin_Animation/all_frzbi_item_view.dart';
 import 'package:animation/modules/animations/Frzbi_Admin_Animation/frzbi_admin_animation_view.dart';
 import 'package:animation/modules/bloc_package/views/bloc_view.dart';
+import 'package:animation/modules/bloc_package/views/search_with_bloc_concurrency_view.dart';
 import 'package:animation/modules/bloc_package/widgets/generic_dialog_view.dart';
 import 'package:animation/modules/bloc_package/widgets/login_bloc_view.dart';
 import 'package:animation/modules/pagination/views/pagination_view.dart';
@@ -29,6 +30,7 @@ class Routes {
   static const String genericDialog = '/genericDialog';
   static const String frzbiAdminView = '/frzbiAdminView';
   static const String allFrzbiItemView = '/allFrzbiItemView';
+  static const String searchWithBlocConcurrency = '/searchWithBlocConcurrency';
 }
 
 class RouteGenerator {
@@ -69,7 +71,9 @@ class RouteGenerator {
       case Routes.allFrzbiItemView:
         return MaterialPageRoute(
             builder: (context) => const AllFrzbiItemView());
-
+      case Routes.searchWithBlocConcurrency:
+        return MaterialPageRoute(
+            builder: (context) => const SearchWithBlocConcurrencyView());
       default:
         return unDefinedRoute();
     }
