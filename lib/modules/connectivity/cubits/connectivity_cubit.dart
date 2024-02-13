@@ -24,29 +24,36 @@ class ConnectivityCubit extends Cubit<ConnectivityState> {
     // Cancel the existing stream subscription if it exists to avoid multiple listeners.
     connectivityStreamSubscription?.cancel();
 
-    // Start listening to the onConnectivityChanged stream provided by the Connectivity plugin.
-    connectivityStreamSubscription =
-        connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
-      // Check if the device is connected to either Wi-Fi or mobile data.
-      final isConnected = (result == ConnectivityResult.wifi ||
-          result == ConnectivityResult.mobile);
-
-      // Step 5: Emit a state based on connectivity changes.
-      // If the device is connected and was previously disconnected, emit ConnectivityHasBeenRestoredState.
-      if (isConnected &&
-          lastConnectivityStatus == ConnectivityStatus.disconnected) {
-        emit(ConnectivityHasBeenRestoredState());
-      }
-      // If the device is disconnected and was previously connected, emit ConnectivityLostConnectionState.
-      else if (!isConnected &&
-          lastConnectivityStatus == ConnectivityStatus.connected) {
-        emit(ConnectivityLostConnectionState());
-      }
-
-      // Update the last known connectivity status for the next comparison.
-      lastConnectivityStatus = isConnected
+    // Determine initial connectivity status without emitting state.
+    connectivity.checkConnectivity().then((initialResult) {
+      // Set the initial connectivity status based on the current status.
+      lastConnectivityStatus = (initialResult == ConnectivityResult.wifi ||
+              initialResult == ConnectivityResult.mobile)
           ? ConnectivityStatus.connected
           : ConnectivityStatus.disconnected;
+
+      // Start listening to the onConnectivityChanged stream.
+      connectivityStreamSubscription = connectivity.onConnectivityChanged
+          .listen((ConnectivityResult result) {
+        // Check if the device is connected to either Wi-Fi or mobile data.
+        final isConnected = (result == ConnectivityResult.wifi ||
+            result == ConnectivityResult.mobile);
+
+        // Only emit state if there's a change in connectivity status.
+        if (isConnected !=
+            (lastConnectivityStatus == ConnectivityStatus.connected)) {
+          if (isConnected) {
+            emit(ConnectivityHasBeenRestoredState());
+          } else {
+            emit(ConnectivityLostConnectionState());
+          }
+
+          // Update the last known connectivity status.
+          lastConnectivityStatus = isConnected
+              ? ConnectivityStatus.connected
+              : ConnectivityStatus.disconnected;
+        }
+      });
     });
   }
 

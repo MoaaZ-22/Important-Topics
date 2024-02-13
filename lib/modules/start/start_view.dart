@@ -23,19 +23,19 @@ class _StartViewState extends State<StartView> {
       AssetsManager.blocExamples
     ];
     List<String> routesNames = [
-      Routes.vandadAnimationRoute,
+      Routes.animationExamplesRoute,
       Routes.designPatternsRoute,
       Routes.paginationRoute,
       Routes.responsiveUIRoute,
       Routes.blocExamples
     ];
     List<String> widgetTitle(context) => [
-      S.of(context).vandadAnimations,
-      S.of(context).designPatterns,
-      S.of(context).pagination,
-      S.of(context).responsiveUi,
-      S.of(context).blocExamples
-    ];
+          S.of(context).vandadAnimations,
+          S.of(context).designPatterns,
+          S.of(context).pagination,
+          S.of(context).responsiveUi,
+          S.of(context).blocExamples
+        ];
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

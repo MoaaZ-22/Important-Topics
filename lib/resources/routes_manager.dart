@@ -1,3 +1,5 @@
+import 'package:animation/modules/animations/Frzbi_Admin_Animation/all_frzbi_item_view.dart';
+import 'package:animation/modules/animations/Frzbi_Admin_Animation/frzbi_admin_animation_view.dart';
 import 'package:animation/modules/bloc_package/views/bloc_view.dart';
 import 'package:animation/modules/bloc_package/widgets/generic_dialog_view.dart';
 import 'package:animation/modules/bloc_package/widgets/login_bloc_view.dart';
@@ -7,14 +9,14 @@ import 'package:flutter/material.dart';
 
 import '../modules/animations/ Curves_And_Clippers/curves_and_clippers.dart';
 import '../modules/animations/Animated_Builder_Transform/animated_builder_and_transform.dart';
-import '../modules/animations/vandad_animations.dart';
+import '../modules/animations/animations_examples.dart';
 import '../modules/design_patterns/Adapter/adapter_view.dart';
 import '../modules/design_patterns/design_patterns_view.dart';
 import '../modules/start/start_view.dart';
 
 class Routes {
   static const String startRoute = '/';
-  static const String vandadAnimationRoute = '/vandadAnimationRoute';
+  static const String animationExamplesRoute = '/animationExamplesRoute';
   static const String animatedBuilderAndTransformRoute =
       '/animatedBuilderAndTransformView';
   static const String designPatternsRoute = '/designPatternsView';
@@ -25,6 +27,8 @@ class Routes {
   static const String blocExamples = '/blocExamples';
   static const String authBLocView = '/authBLocView';
   static const String genericDialog = '/genericDialog';
+  static const String frzbiAdminView = '/frzbiAdminView';
+  static const String allFrzbiItemView = '/allFrzbiItemView';
 }
 
 class RouteGenerator {
@@ -32,9 +36,9 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.startRoute:
         return MaterialPageRoute(builder: (context) => const StartView());
-      case Routes.vandadAnimationRoute:
+      case Routes.animationExamplesRoute:
         return MaterialPageRoute(
-            builder: (context) => const VandadAnimations());
+            builder: (context) => const AnimationsExamples());
       case Routes.animatedBuilderAndTransformRoute:
         return MaterialPageRoute(
             builder: (context) => const AnimatedBuilderAndTransform());
@@ -58,6 +62,13 @@ class RouteGenerator {
       case Routes.genericDialog:
         return MaterialPageRoute(
             builder: (context) => const GenericDialogView());
+      case Routes.frzbiAdminView:
+        return MaterialPageRoute(
+            builder: (context) => const PackageListAnimation());
+
+      case Routes.allFrzbiItemView:
+        return MaterialPageRoute(
+            builder: (context) => const AllFrzbiItemView());
 
       default:
         return unDefinedRoute();

@@ -29,8 +29,7 @@ class AdvancedTopicsApp extends StatelessWidget {
         GlobalKey<ScaffoldMessengerState>();
     return MultiBlocProvider(
         providers: [
-          BlocProvider(
-              create: (context) => ConnectivityCubit()..checkConnectivity()),
+          BlocProvider(create: (context) => ConnectivityCubit()),
           BlocProvider(create: (context) => AuthBloc(AuthRepository())),
         ],
         child: BlocListener<ConnectivityCubit, ConnectivityState>(

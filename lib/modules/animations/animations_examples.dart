@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../app/components.dart';
 
-class VandadAnimations extends StatelessWidget {
-  const VandadAnimations({super.key});
+class AnimationsExamples extends StatelessWidget {
+  const AnimationsExamples({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +32,13 @@ class VandadAnimations extends StatelessWidget {
           CustomButton(
             buttonText: ' Curves and Clippers ',
             routesName: Routes.curvesAndClippersRoute,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          CustomButton(
+            buttonText: 'Frzbi Admin',
+            routesName: Routes.frzbiAdminView,
           )
         ],
       ),
