@@ -10,7 +10,6 @@ part 'search_state.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final TextEditingController searchController = TextEditingController();
-  late final StreamSubscription _textSubscription;
 
   SearchBloc() : super(SearchInitial()) {
     // Listen to the text controller and add SearchTermChanged events
@@ -36,7 +35,6 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
 
   @override
   Future<void> close() {
-    _textSubscription.cancel();
     searchController
         .dispose(); // Make sure to dispose of the controller if it's no longer needed
     return super.close();
